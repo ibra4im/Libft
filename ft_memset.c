@@ -27,15 +27,3 @@ void    *ft_memset(void *s, int c, size_t n)
     }
     return (s);
 }
-
-
-#include <stdio.h>
-int main()
-{
-    int    x = 0;
-    void    *holder = &x;
-    ft_memset(holder, 0x39, 1);
-    ft_memset(holder+1, 0x05, 1);
-    ft_memset(holder+2, 0, 1);
-    printf("%d\n", x);
-}
