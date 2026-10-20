@@ -6,13 +6,13 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:44:22 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/16 09:50:14 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/20 11:45:40 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	len;
 
@@ -21,7 +21,7 @@ char *ft_strrchr(const char *s, int c)
 	{
 		if (s[len] == c)
 		{
-			return (s[len]);
+			return ((char*)&s[len]);
 		}
 		len--;
 	}

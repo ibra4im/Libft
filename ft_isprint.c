@@ -6,18 +6,17 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 08:58:15 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/14 08:58:18 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/20 11:43:18 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 31 && c <= 128 || c == ' ')
-    {
-        return (1);
-    }
-    return (0);
+	if ((c > 31 && c < 128))
+	{
+		return (1);
+	}
+	return (0);
 }

@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
-	int j;
+	int	j;
 
 	if (little[0] == '\0' || len == 0)
 	{
