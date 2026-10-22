@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:44:22 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/20 11:45:40 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 10:08:20 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	len;
 
 	len = ft_strlen(s);
-	while (len > 0)
+	while (len >= 0)
 	{
 		if (s[len] == c)
 		{

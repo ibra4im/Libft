@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 14:22:20 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/18 14:42:56 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 10:44:10 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	sub[i] = '\0';
 	return (sub);
-}
-
-int	main(void)
-{
-	char	*p = ft_substr("hello world", 0, -1);
-
-	printf("%s", p);
 }

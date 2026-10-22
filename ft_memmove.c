@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 10:42:54 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/19 14:17:57 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 09:17:57 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*ssrc;
 	unsigned char	*dst;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	dst = (unsigned char *)dest;
 	ssrc = (unsigned char *)src;

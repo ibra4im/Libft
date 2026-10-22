@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 09:26:56 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/17 10:52:34 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 09:03:10 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	bzero(ptr, nmemb * size);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

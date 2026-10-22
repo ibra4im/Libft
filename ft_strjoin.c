@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:42:29 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/19 14:17:23 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 10:48:53 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,12 @@ static char	*helper_join(char const *s1, char const *s2, char *join)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		totallen;
-	size_t	i;
 	char	*join;
-	size_t	j;
 
-	i = 0;
-	s1len = ft_strlen((char *)s1);
-	s2len = ft_strlen((char *)s2);
-	totallen = s1len + s2len;
+	totallen = ft_strlen(s1) + ft_strlen(s2);
 	join = malloc(totallen + 1 * (sizeof(char)));
-	join = helper_join();
+	if (!join)
+		return (NULL);
+	join = helper_join(s1, s2 , join);
 	return (join);
 }
