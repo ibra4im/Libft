@@ -6,45 +6,41 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 15:13:56 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/22 11:39:49 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/23 16:27:58 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static	size_t	ft_strnlen(char *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && s[i])
+		i++;
+	return (i);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		lenofsrc;
+	size_t	dstlen;
+	size_t	srclen;
 	size_t	i;
-	int		j;
-	int		lenofdst;
+	size_t	j;
 
-	lenofsrc = 0;
-	lenofdst = 0;
+	if (size == 0 || (!dst && size == 0))
+		return (ft_strlen(src));
+	dstlen = ft_strnlen(dst, size);
+	srclen = ft_strlen(src);
 	i = 0;
-	j = 0;
-	while (src[lenofsrc] != '\0')
-	{
-		lenofsrc++;
-	}
-	while (dst[j])
-	{
-		j++;
-	}
-	lenofdst = j;
-	while (i < size -1)
-	{
-		dst[j] = src[i];
+	while (dst[i] && i < size)
 		i++;
-		j++;
-	}
-	return (lenofdst + lenofsrc);
-}
-#include <stdio.h>
-int main()
-{
-	char *src = "the cake is a lie !\0I'm hidden lol\r\n";
-	char dest[100]  = "there os no stars in the sky";
-	ft_strlcat(dest,src,100);
-	printf("%s",dest);
+	if (dst[i] != '\0' && i >= size)
+		return (size + ft_strlen(src));
+	j = 0;
+	while (i < size - 1 && src[j])
+		dst[i++] = src[j++];
+	dst[i] = '\0';
+	return (dstlen + srclen);
 }

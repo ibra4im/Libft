@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:50:54 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/17 09:00:37 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/23 10:34:56 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		return ((char *)big);
 	}
+	if (len < ft_strlen(big))
+		return (NULL);
 	i = 0;
 	while (big[i])
 	{
@@ -31,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		if (little[j] == '\0')
 		{
-			return ((char *)&little[j]);
+			return ((char *)&big[i]);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:42:29 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/22 10:48:53 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:49:18 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join = malloc(totallen + 1 * (sizeof(char)));
 	if (!join)
 		return (NULL);
-	join = helper_join(s1, s2 , join);
+	join = helper_join(s1, s2, join);
 	return (join);
 }

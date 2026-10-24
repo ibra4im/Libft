@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:44:22 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/22 10:08:20 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:55:56 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[len] == c)
 		{
-			return ((char*)&s[len]);
+			return ((char *) &s[len]);
 		}
 		len--;
 	}

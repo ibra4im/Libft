@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:26:24 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/21 08:32:51 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 16:49:48 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (dest);
-}
-
-int	main(void)
-{
-	int	dest;
-	int	src = 1337;
-
-	ft_memcpy(&dest, &src, 4);
-	printf("%d", dest);
 }

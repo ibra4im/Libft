@@ -6,7 +6,7 @@
 /*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 08:54:28 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/18 11:27:28 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/22 15:28:59 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
-	{
 		i++;
-	}
 	return (i);
 }
