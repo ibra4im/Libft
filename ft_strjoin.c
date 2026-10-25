@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 08:42:29 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/22 16:49:18 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/25 09:23:11 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		totallen;
 	char	*join;
 
+	if (!s1 || !s2)
+		return (NULL);
 	totallen = ft_strlen(s1) + ft_strlen(s2);
 	join = malloc(totallen + 1 * (sizeof(char)));
 	if (!join)

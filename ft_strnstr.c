@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:50:54 by brancari          #+#    #+#             */
 /*   Updated: 2026/10/23 10:34:56 by brancari         ###   ########.fr       */

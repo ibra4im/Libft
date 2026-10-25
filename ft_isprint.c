@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: By: brancari <brancari@student.1337.ma>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 08:58:15 by brancari          #+#    #+#             */
 /*   Updated: 2026/10/22 09:32:01 by brancari         ###   ########.fr       */

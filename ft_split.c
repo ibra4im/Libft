@@ -3,46 +3,91 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brancari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 09:58:40 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/20 10:53:36 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/25 10:37:34 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *s, char c)
+static int	is_charset(char const s, char c)
 {
-	int	i;
-	int	words;
-
-	words = 0;
-	i = 0;
-	while (s[i])
-	{
-		if ((i == 0 && s[i] != c) || (s[i - 1] != c && s[i] == c))
-		{
-			words++;
-		}
-		i++;
-	}
-	return (words);
+	if (s == c)
+		return (1);
+	return (0);
 }
 
-static char	*fill(char const *s, char c, char **p)
+static int	count_word(char const *str, char charset)
 {
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] && is_charset(charset, str[i]))
+			i++;
+		if (str[i] && !is_charset(charset, str[i]))
+		{
+			count++;
+			while (str[i] && !is_charset(charset, str[i]))
+				i++;
+		}
+	}
+	return (count);
+}
+
+static	char	*malloc_string(char const *str, char charset)
+{
+	int		i;
+	char	*word;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (str[len]  && !is_charset(charset, str[len]))
+	{
+		len++;
+	}
+	word = malloc((len * sizeof(char)) + 1);
+	if (!word)
+		return (NULL);
+	while (i < len)
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**arr;
 	int		i;
-	char	**p;
-	int		words;
+	int		j;
 
-	i = 0;
-	words = count_words(s, c);
-	p = malloc((char **) words + 1);
-	if (!p)
+	if (!s)
 		return (NULL);
+	arr = malloc ((count_word(s, c) * sizeof(char *)) + 1);
+	if (!arr)
+		return (NULL);
+	j = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && is_charset(c, s[i]))
+			i++;
+		if (s[i] && !is_charset(c, s[i]))
+		{
+			arr[j++] = malloc_string(&s[i], c);
+			while (s[i] && !is_charset(c, s[i]))
+				i++;
+		}
+	}
+	arr[j] = NULL;
+	return (arr);
 }
