@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 09:58:40 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/25 10:37:34 by brancari         ###   ########.fr       */
+/*   Updated: 2026/10/27 09:00:36 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static	char	*malloc_string(char const *str, char charset)
 
 	i = 0;
 	len = 0;
-	while (str[len]  && !is_charset(charset, str[len]))
+	while (str[len] && !is_charset(charset, str[len]))
 	{
 		len++;
 	}
@@ -62,6 +62,17 @@ static	char	*malloc_string(char const *str, char charset)
 	}
 	word[i] = '\0';
 	return (word);
+}
+
+static void	free_all(int words, char **p)
+{
+	int	j;
+
+	while (j < words)
+	{
+		free(p[j]);
+		j++;
+	}
 }
 
 char	**ft_split(char const *s, char c)
@@ -89,5 +100,6 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	arr[j] = NULL;
+	free_all(count_word(s, c), arr);
 	return (arr);
 }
