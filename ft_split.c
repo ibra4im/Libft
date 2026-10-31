@@ -40,7 +40,7 @@ static int	count_word(char const *str, char charset)
 	return (count);
 }
 
-static	char	*malloc_string(char const *str, char charset)
+static char	*malloc_string(char const *str, char charset)
 {
 	int		i;
 	char	*word;

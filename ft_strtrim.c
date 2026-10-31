@@ -40,7 +40,7 @@ static void	ft_copy(int start, int end, char const *s, char *res)
 	res[i] = '\0';
 }
 
-static	char	*check_len_and_malloc(int start, int end)
+static char	*check_len_and_malloc(int start, int end)
 {
 	char	*p;
 
