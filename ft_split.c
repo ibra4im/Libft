@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 09:58:40 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/27 09:00:36 by brancari         ###   ########.fr       */
+/*   Updated: 2026/11/01 17:30:44 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,42 +64,45 @@ static char	*malloc_string(char const *str, char charset)
 	return (word);
 }
 
-static void	free_all(int words, char **p)
+static char	**free_all(char **p, int j)
 {
-	int	j;
+	int	i;
 
-	while (j < words)
+	i = 0;
+	while (i < j)
 	{
-		free(p[j]);
-		j++;
+		free(p[i]);
+		i++;
 	}
+	free (p);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	int		i;
 	int		j;
 
 	if (!s)
 		return (NULL);
-	arr = malloc ((count_word(s, c) * sizeof(char *)) + 1);
+	arr = malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
 	j = 0;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && is_charset(c, s[i]))
-			i++;
-		if (s[i] && !is_charset(c, s[i]))
+		while (*s && is_charset(c, *s))
+			s++;
+		if (*s)
 		{
-			arr[j++] = malloc_string(&s[i], c);
-			while (s[i] && !is_charset(c, s[i]))
-				i++;
+			arr[j] = malloc_string(s, c);
+			if (!arr[j])
+				return (free_all(arr, j));
+			j++;
+			while (*s && !is_charset(c, *s))
+				s++;
 		}
 	}
 	arr[j] = NULL;
-	free_all(count_word(s, c), arr);
 	return (arr);
 }
