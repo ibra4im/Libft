@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:26:24 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/22 16:49:48 by brancari         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:30:01 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	ptrtodst = (unsigned char *)dest;
 	ptrtosrc = (unsigned char *)src;
 	i = 0;
-	if (!dest && !src)
-		return (NULL);
 	while (i < n)
 	{
 		ptrtodst[i] = ptrtosrc[i];

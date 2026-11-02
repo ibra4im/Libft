@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 09:03:06 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/23 10:39:22 by brancari         ###   ########.fr       */
+/*   Updated: 2026/11/01 20:12:58 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	res;
-	int	i;
+	int		sign;
+	long	res;
+	int		i;
 
 	i = 0;
 	while (nptr[i] <= 13 || nptr[i] == ' ')
