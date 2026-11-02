@@ -27,8 +27,6 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus : all
-
 clean :
 	rm -f $(OBJS)
 
@@ -36,7 +34,3 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
-
-so:
-	$(CC) -fPIC $(CFLAGS) -c $(SRCS)
-	$(CC) -shared -nostartfiles -o libft.so $(OBJS)
