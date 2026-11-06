@@ -164,14 +164,6 @@ typedef struct s_list
 - [`ar` manual](https://man7.org/linux/man-pages/man1/ar.1.html)
 
 ### Use of AI
-
-AI was used for the following tasks :
-
-Explaining reasons of practices in libc.
-
-Explaining linked list padding and alignement.
-
-Explaining memory layout and how each part functions.
+Explain some theory concepts 
 
 Suggesting edge cases.
-

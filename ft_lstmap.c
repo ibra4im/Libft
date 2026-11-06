@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 13:43:29 by brancari          #+#    #+#             */
-/*   Updated: 2026/11/01 18:17:48 by brancari         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:25:57 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		content = f(lst->content);
-		if (!content)
-		{
-			ft_lstclear(&res, del);
-			return (NULL);
-		}
 		newnode = ft_lstnew(content);
 		if (!newnode)
 		{
-			del(content);
-			ft_lstdelone(res, del);
+			if (content)
+				del(content);
+			ft_lstclear(&res, del);
+			return (NULL);
 		}
 		ft_lstadd_back(&res, newnode);
 		lst = lst->next;
