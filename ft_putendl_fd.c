@@ -6,7 +6,7 @@
 /*   By: brancari <brancari@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 10:48:12 by brancari          #+#    #+#             */
-/*   Updated: 2026/10/29 10:51:28 by brancari         ###   ########.fr       */
+/*   Updated: 2026/11/09 18:26:28 by brancari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	i = 0;
 	if (fd == -1 || !s)
 		return ;
 	while (s[i])
